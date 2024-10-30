@@ -1,49 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+    <link rel="stylesheet" href="css/index.css">
 </head>
-<body>
-    <header>
-        <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="200"
-        height="200"
-        viewBox="0 0 200 200"
-    >
-        <defs>
-            <g id="star" transform="rotate(-15, 100, 100)">
-                <path
-                    d="M100,15 
-                       L120,70 
-                       L180,70 
-                       L130,105 
-                       L150,160 
-                       L100,125 
-                       L50,160 
-                       L70,105 
-                       L20,70 
-                       L80,70 
-                       Z"
-                    fill="none"
-                    stroke="#F6E05E"
-                    stroke-width="2"
-                    stroke-linejoin="round"
-                />
-            </g>
-        </defs>
-        <use href="#star" />
-    </svg>
-        <h1>Neuadd y Seren</h1>
-        <h2>Where dreams take flight, and stars shine bright</h2>
-    </header>
-    <main>
 
-        <iframe src="video.html" width="900" height="400"></iframe>
+<body>
+    <header id="headerIndex">
+        <div class="parteSuperior">
+            <div id="parteLogo">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" id="logo">
+                        <defs>
+                            <g id="star" transform="rotate(-15, 100, 100)">
+                                <path d="M100,15 
+                                    L120,70 
+                                    L180,70 
+                                    L130,105 
+                                    L150,160 
+                                    L100,125 
+                                    L50,160 
+                                    L70,105 
+                                    L20,70 
+                                    L80,70 
+                                    Z" fill="#F6E05E" stroke="#F6E05E" stroke-width="2" stroke-linejoin="round" />
+                            </g>
+                        </defs>
+                        <use href="#star" />
+                    </svg>
+                    <h2 id="nombrePagina">Seren</h2>
+                </a>
+            </div>
+            <ul id="enlaces">
+                <li><a href="#">Book</a></li>
+                <li><a href="#">Food</a></li>
+                <div class="bar-container">
+                    <div class="bar"></div>
+                    <div class="bar short"></div>
+                </div>
+            </ul>
+        </div>
+        <div class="video-background">
+            <video width="640" height="360" controls autoplay loop muted playsinline>
+                <source src="videos/intro.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de videos.
+            </video>
+            <div id="overlay">
+                <h1 id="nombreCompletoPagina">Neuadd y Seren</h1>
+            </div>
+        </div>
+    </header>
+    <h2>Where dreams take flight, and stars shine bright</h2>
+    <main>
+        <section class="upperSection">
+            <div class="timeline">
+                <div class="event breakfast">Breakfast</div>
+                <div class="event rooms">Rooms</div>
+                <div class="event lunch">Lunch</div>
+                <div class="event afternoon">Afternoon</div>
+                <div class="event dinner">Dinner</div>
+            </div>
+        </section>
+        <section class="breakfast">
+            <div>
+                <a href="#">
+                    <img src="img/food/FMDD2333.jpg" alt="honey">
+                    <h3></h3>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="img/food/raspberry_and_lemon_pancakes.jpg" alt="pancakes">
+                    <h3></h3>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="img/food/02 Bara brith in tin.jpg.jpg" alt="Bara">
+                    <h3></h3>
+                </a>
+            </div>
+        </section>
+        <section class="rooms">
+            <div>
+                <a href="#">
+                    <img src="img/rooms/Churchill-1-gallery.jpg" alt="masterBeadroom">
+                    <h3></h3>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="img/rooms/conwy-fusion-slide-min.jpg" alt="cheapBeadroom">
+                    <h3></h3>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="img/rooms/Harpers-Barn-08-mod-min.jpg" alt="barn">
+                    <h3></h3>
+                </a>
+            </div>
+        </section>
+        <section class="lunch">
+            <div>
+                <a href="#">
+                    <img src="img/food/Honey glazed roast leg of Welsh lamb with ginger and mustard.jpg" alt="roastLeg">
+                    <h3></h3>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="img/food/deconstruct_ngtf-cawl-06_hr.avif" alt="cawl">
+                    <h3>Our famous Cawl</h3>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="img/food/Glamorgan Sausages Frying.jpg.jpg" alt="Sausages">
+                    <h3></h3>
+                </a>
+            </div>
+        </section>
+        <section class="afternoon">
+            <div>
+                <a href="#">
+                    <img src="img/afternoon/afternoon-tea-1.jpg" alt="biscuits">
+                    <h3></h3>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="img/afternoon/Pale-Hall-aft-tea-001.jpg" alt="tea">
+                    <h3>Our famous Cawl</h3>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="img/afternoon/Pale-Hall-wine-cellar-600x792.jpg" alt="wineCellar">
+                    <h3></h3>
+                </a>
+            </div>
+            <a href="#">
+                <img src="img/afternoon/shutterstock_2487256111-1-scaled-e1722261886342-600x808.jpg" alt="wine">
+                <h3></h3>
+            </a>
+        </div>
+        </section>
+        <section class="dinner">
+            <div>
+                <a href="#">
+                    <img src="img/food/NVW-C93-1920-0071.jpg" alt="mexillons">
+                    <h3></h3>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="img/food/Welsh rarebit with laverbread & ale.jpg.jpg" alt="rarebit">
+                    <h3>Our famous Cawl</h3>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="img/food/Food-4-1-scaled.jpg" alt="food">
+                    <h3></h3>
+                </a>
+            </div>
+            <a href="#">
+                <img src="img/rooms/Robertson-dining-room.jpg" alt="dinnerRoom">
+                <h3></h3>
+            </a>
+        </div>
+        </section>
     </main>
     <footer></footer>
 </body>
+
 </html>
