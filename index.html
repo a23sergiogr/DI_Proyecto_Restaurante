@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="/scripts/header.js"></script>
+    <script src="/scripts/backToTop.js"></script>
     <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
-    <header id="headerIndex">
-        <div class="parteSuperior">
+    <header class="headerIndex">
+        <div class="parteSuperior" id="parteSuperior">
             <div id="parteLogo">
                 <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" id="logo">
@@ -49,19 +51,33 @@
                 Tu navegador no soporta la reproducción de videos.
             </video>
             <div id="overlay">
-                <h1 id="nombreCompletoPagina">Neuadd y Seren</h1>
+                <h1 class="nombreCompletoPagina">Neuadd y Seren</h1>
             </div>
         </div>
+        <h2 class="frase">Where dreams take flight, and stars shine bright</h2>
     </header>
-    <h2>Where dreams take flight, and stars shine bright</h2>
-    <main>
+    <main class="mainIndex">
         <section class="upperSection">
-            <div class="timeline">
-                <div class="event breakfast">Breakfast</div>
-                <div class="event rooms">Rooms</div>
-                <div class="event lunch">Lunch</div>
-                <div class="event afternoon">Afternoon</div>
-                <div class="event dinner">Dinner</div>
+            <div class="rightbox">
+                <div class="rb-container">
+                    <ul class="rb">
+                        <li class="rb-item" ng-repeat="itembx">
+                            <button class="item-title" id="timeline-breakfast" onclick="goToBreakfast()">Breakfast</button>
+                        </li>
+                        <li class="rb-item" ng-repeat="itembx">
+                            <button class="item-title" id="timeline-rooms" onclick="goToRooms()">Rooms</button>
+                        </li>
+                        <li class="rb-item" ng-repeat="itembx">
+                            <button class="item-title" id="timeline-lunch" onclick="goToLunch()">Lunch</button>
+                        </li>
+                        <li class="rb-item" ng-repeat="itembx">
+                            <button class="item-title" id="timeline-afternoon" onclick="goToAfternoon()">Afternoon</button>
+                        </li>
+                        <li class="rb-item" ng-repeat="itembx">
+                            <button class="item-title" id="timeline-dinner" onclick="goToDinner()">Dinner</button>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
         <section class="breakfast">
@@ -175,8 +191,13 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <div class="book"><a href="/book.html">Book</a></div>
+    <footer class="footerIndex">
+        <button class="backToTop" id="backToTop" onclick="scrollToTop()">↑ Back to Top</button>
+        <div class="book">
+            <ul>
+                <li><a href="/book.html" class="bookRef">Book</a></li>
+            </ul>
+        </div>
         <div class="bottonInfo">
             <div class="location">
                 <p>Neuadd y Seren</p>

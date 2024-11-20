@@ -11,31 +11,50 @@
 
 :root {
     --primaryColor: #F6E05E;
-    --highlightPrimaryColor: #FFD700;
-    --backgroundColor: #1c1e35;
+    --highlightPrimaryColor: #ffbb00;
+    --primaryShadowColor: rgba(246, 224, 94, 0.4);
+    --transparentBackgroundPrimaryColor: rgba(255, 187, 0, 0.1);
+
+    --backgroundColor: #151935;
     --textColor: #F6E05E;
     --overlayColor: rgba(0, 0, 0, 0.5);
+
+    --buttonBackgroundColor: #4CAF50; 
+    --buttonHoverColor: #45a049; 
+    --buttonShadowColor: rgba(76, 175, 80, 0.5);
 }
-body, html {
+
+body,
+html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: var(--backgroundColor);
     color: var(--textColor);
 
     width: 100%;
     height: 100%;
     
+    background: var(--backgroundColor) url('https://www.transparenttextures.com/patterns/cubes.png');
+    background-size: auto;
+    box-shadow: inset 0 1200px 1000px rgba(0, 0, 0, 0.5);
+
     display: grid;
     align-items: center;
 }
 
-#headerIndex {
+
+
+/****************************************************************************************************************/
+/*****************************************************HEADER*****************************************************/
+/****************************************************************************************************************/
+
+.headerIndex {
     display: grid;
     grid-template-rows: 150px 1fr;
 
-    width: calc(100% - 40px);
-    padding: 20px;
+    width: calc(100% - 80px);
+    padding: 40px;
+    padding-top: 20px;
     position: relative;
     z-index: 2;
 }
@@ -44,9 +63,17 @@ body, html {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+
+    width: calc(100% - 80px);
+    
+    position: fixed; 
+    top: 0; 
+
+    transition: top 0.3s ease, position 0.3s ease;
 }
 
 #parteLogo a {
+    text-decoration: none;
     display: flex;
     align-items: center;
 }
@@ -55,6 +82,7 @@ body, html {
     color: var(--primaryColor);
     font-size: 24px;
     text-decoration: none;
+    text-shadow: 0 4px 6px var(--primaryShadowColor); 
 
     font-family: wales-sans;
 }
@@ -135,25 +163,26 @@ video {
     width: 50%;
     height: 50%;
     object-fit: cover;
+    box-shadow: 0 0 6px var(--primaryShadowColor); 
 }
 
 #overlay {
-    position: absolute; 
-    width: 50%;
+    position: absolute;
+    width: calc(50% + 2px);
     height: 50%;
-    top: 50%; 
-    left: 50%; 
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--overlayColor);
-    z-index: 1; 
+    z-index: 1;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#nombreCompletoPagina {
-    color: var(--primaryColor); 
+.nombreCompletoPagina {
+    color: var(--primaryColor);
     font-size: 3em;
     z-index: 10;
     text-align: center;
@@ -161,51 +190,241 @@ video {
     font-family: wales-sans;
 }
 
+.frase{
+    width: calc(100% - 80px);
+    justify-self: center;
+    text-align: center;
+    margin-top: 900px;
+}
+
+
+
+
+/****************************************************************************************************************/
+/******************************************************MAIN******************************************************/
+/****************************************************************************************************************/
+
+
+
+
+/******************************************/
+/*****************TIMELINE*****************/
+/******************************************/
+
+.rightbox {
+    position: fixed;
+    top: 80px;
+    right: 150px;
+    height: 100%;
+}
+
+.rb-container {
+    font-family: "PT Sans", sans-serif;
+    width: 50%;
+    margin: auto;
+    display: block;
+    position: relative;
+
+    z-index: 10;
+}
+
+.rb-container ul.rb {
+    margin: 2.5em 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.rb-container ul.rb li {
+    list-style: none;
+    margin: auto;
+    margin-left: 10em;
+    min-height: 50px;
+    border-left: 1px dashed var(--primaryColor);
+    padding: 0 0 50px 30px;
+    position: relative;
+}
+
+.rb-container ul.rb li:last-child {
+    border-left: 0;
+}
+
+.rb-container ul.rb li::before {
+    position: absolute;
+    left: -18px;
+    top: -5px;
+    content: " ";
+    border: 8px solid var(--primaryColor);
+    border-radius: 500%;
+    background: var(--buttonBackgroundColor);
+    height: 20px;
+    width: 20px;
+    transition: all 500ms ease-in-out;
+}
+
+.rb-container ul.rb li:hover::before {
+    border-color: var(--highlightPrimaryColor);
+    transition: all 1000ms ease-in-out;
+}
+
+.item-title {
+    color: var(--textColor);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 16px;
+    text-align: left;
+    transition: color 0.3s, background 0.3s; 
+    
+    z-index: 10;
+}
+
+.item-title:hover {
+    color: var(--highlightPrimaryColor);
+    background-color: var(--transparentBackgroundPrimaryColor);
+    border-radius: 5px;
+}
+
+.item-title:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--highlightPrimaryColor);
+}
+
+
+/******************************************/
+/******************************************/
+/******************************************/
+
+
 img {
     height: 500px;
     width: 500px;
 }
 
-/**FOOTER**/
-.book{
-    text-align: center;
+
+
+
+/****************************************************************************************************************/
+/*****************************************************FOOTER*****************************************************/
+/****************************************************************************************************************/
+
+.footerIndex{
     padding: 40px;
-    font-weight: bolder;
+    padding-bottom: 20px;
 }
 
-.book a{
+.backToTop {
+    position: fixed;
+    bottom: 150px;
+    right: 80px;
+    background-color: var(--buttonBackgroundColor); 
+    color: var(--textColor); 
+    font-family: wales-sans;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px var(--buttonShadowColor); 
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.backToTop:hover {
+    background-color: var(--buttonHoverColor); 
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 10px var(--buttonShadowColor); 
+}
+
+.backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.book {
+    text-align: center;
+    padding: 400px;
+    padding-bottom: 200px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bookRef {
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
     text-decoration: none;
     color: var(--primaryColor);
-    font-size: 40px;
-}
-.book a:hover{
-    color: var(--highlightPrimaryColor);
-}
-.book a:active{
-    color: red;
+    font-weight: bolder;
+    font-size: 80px;
+    font-family: wales-sans;
+    text-shadow: 0 4px 6px var(--primaryShadowColor); 
+
+    transition: all 0.3s;
 }
 
-.bottonInfo{
+.bookRef:hover {
+    color: var(--highlightPrimaryColor);
+}
+
+.bookRef::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: var(--highlightPrimaryColor);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+
+.bookRef:hover::after,
+.bookRef:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0.1em, 0);
+}
+
+
+
+.bottonInfo {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: end;
     padding: 40px;
 }
 
-.location{
+.location {
     justify-self: left;
 }
 
-.contactInfo{
+.location p{
+    font-family: wales-sans;
+}
+
+.contactInfo {
     justify-self: center;
 }
 
-.socialImg{
+
+
+.socialImg {
     justify-self: right;
     align-self: flex-end;
 }
 
-.svg{
+.socialImg a {
+    text-decoration: none;
+}
+
+.svg {
     fill: var(--primaryColor);
     stroke: var(--primaryColor);
+    box-shadow: 0 4px 6px var(--primaryShadowColor); 
 }
