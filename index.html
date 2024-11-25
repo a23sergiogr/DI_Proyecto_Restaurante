@@ -7,6 +7,7 @@
     <title>Document</title>
     <script src="/scripts/header.js"></script>
     <script src="/scripts/backToTop.js"></script>
+    <script src="/scripts/timeline.js"></script>
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -58,7 +59,7 @@
     </header>
     <main class="mainIndex">
         <section class="upperSection">
-            <div class="rightbox">
+            <div class="rightbox" id="timeline">
                 <div class="rb-container">
                     <ul class="rb">
                         <li class="rb-item" ng-repeat="itembx">
@@ -80,116 +81,130 @@
                 </div>
             </div>
         </section>
-        <section class="breakfast">
-            <div>
+        <div class="ImagesContainer">
+            <section class="breakfast imgSectionIndex">
+                <div class="imgRow">
+                    <div>
+                        <a href="#">
+                            <img id="honeyImage" src="img/food/FMDD2333.jpg" alt="honey" class="img">
+                            <h3></h3>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img id="pancakesImage" src="img/food/raspberry_and_lemon_pancakes.jpg" alt="pancakes" class="img">
+                            <h3></h3>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <a href="#">
+                        <img id="baraImage" src="img/food/02 Bara brith in tin.jpg.jpg" alt="Bara" class="img">
+                        <h3></h3>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="rooms imgSectionIndex">
+                <div>
+                    <a href="#">
+                        <img id="masterBedroomImage" src="img/rooms/Churchill-1-gallery.jpg" alt="masterBeadroom" class="img">
+                        <h3></h3>
+                    </a>
+                </div>
+                <div class="imgRow">
+                    <div>
+                        <a href="#">
+                            <img id="cheapBedroomImage" src="img/rooms/conwy-fusion-slide-min.jpg" alt="cheapBeadroom" class="img">
+                            <h3></h3>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img id="barnImage" src="img/rooms/Harpers-Barn-08-mod-min.jpg" alt="barn" class="img">
+                            <h3></h3>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="lunch imgSectionIndex">
+                <div>
+                    <a href="#">
+                        <img id="roastLegImage" src="img/food/Honey glazed roast leg of Welsh lamb with ginger and mustard.jpg" alt="roastLeg" class="img">
+                        <h3></h3>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img id="cawlImage" src="img/food/deconstruct_ngtf-cawl-06_hr.avif" alt="cawl" class="img">
+                        <h3>Our famous Cawl</h3>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img id="sausagesImage" src="img/food/Glamorgan Sausages Frying.jpg.jpg" alt="Sausages" class="img">
+                        <h3></h3>
+                    </a>
+                </div>
+            </section>
+            
+            <section class="afternoon imgSectionIndex">
+                <div>
+                    <a href="#">
+                        <img id="biscuitsImage" src="img/afternoon/afternoon-tea-1.jpg" alt="biscuits" class="img">
+                        <h3></h3>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img id="teaImage" src="img/afternoon/Pale-Hall-aft-tea-001.jpg" alt="tea" class="img">
+                        <h3>Our famous Cawl</h3>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <img id="wineCellarImage" src="img/afternoon/Pale-Hall-wine-cellar-600x792.jpg" alt="wineCellar" class="img">
+                        <h3></h3>
+                    </a>
+                </div>
                 <a href="#">
-                    <img src="img/food/FMDD2333.jpg" alt="honey">
+                    <img id="wineImage" src="img/afternoon/shutterstock_2487256111-1-scaled-e1722261886342-600x808.jpg" alt="wine" class="img">
                     <h3></h3>
                 </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="img/food/raspberry_and_lemon_pancakes.jpg" alt="pancakes">
-                    <h3></h3>
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="img/food/02 Bara brith in tin.jpg.jpg" alt="Bara">
-                    <h3></h3>
-                </a>
-            </div>
-        </section>
-        <section class="rooms">
-            <div>
-                <a href="#">
-                    <img src="img/rooms/Churchill-1-gallery.jpg" alt="masterBeadroom">
-                    <h3></h3>
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="img/rooms/conwy-fusion-slide-min.jpg" alt="cheapBeadroom">
-                    <h3></h3>
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="img/rooms/Harpers-Barn-08-mod-min.jpg" alt="barn">
-                    <h3></h3>
-                </a>
-            </div>
-        </section>
-        <section class="lunch">
-            <div>
-                <a href="#">
-                    <img src="img/food/Honey glazed roast leg of Welsh lamb with ginger and mustard.jpg" alt="roastLeg">
-                    <h3></h3>
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="img/food/deconstruct_ngtf-cawl-06_hr.avif" alt="cawl">
-                    <h3>Our famous Cawl</h3>
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="img/food/Glamorgan Sausages Frying.jpg.jpg" alt="Sausages">
-                    <h3></h3>
-                </a>
-            </div>
-        </section>
-        <section class="afternoon">
-            <div>
-                <a href="#">
-                    <img src="img/afternoon/afternoon-tea-1.jpg" alt="biscuits">
-                    <h3></h3>
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="img/afternoon/Pale-Hall-aft-tea-001.jpg" alt="tea">
-                    <h3>Our famous Cawl</h3>
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="img/afternoon/Pale-Hall-wine-cellar-600x792.jpg" alt="wineCellar">
-                    <h3></h3>
-                </a>
-            </div>
-            <a href="#">
-                <img src="img/afternoon/shutterstock_2487256111-1-scaled-e1722261886342-600x808.jpg" alt="wine">
-                <h3></h3>
-            </a>
-            </div>
-        </section>
-        <section class="dinner">
-            <div>
-                <a href="#">
-                    <img src="img/food/NVW-C93-1920-0071.jpg" alt="mexillons">
-                    <h3></h3>
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="img/food/Welsh rarebit with laverbread & ale.jpg.jpg" alt="rarebit">
-                    <h3>Our famous Cawl</h3>
-                </a>
-            </div>
-            <div>
-                <a href="#">
-                    <img src="img/food/Food-4-1-scaled.jpg" alt="food">
-                    <h3></h3>
-                </a>
-            </div>
-            <a href="#">
-                <img src="img/rooms/Robertson-dining-room.jpg" alt="dinnerRoom">
-                <h3></h3>
-            </a>
-            </div>
-        </section>
+            </section>
+            
+            <section class="dinner imgSectionIndex">
+                <div class="imgRow">
+                    <div>
+                        <a href="#">
+                            <img id="mexillonsImage" src="img/food/NVW-C93-1920-0071.jpg" alt="mexillons" class="img">
+                            <h3></h3>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img id="rarebitImage" src="img/food/Welsh rarebit with laverbread & ale.jpg.jpg" alt="rarebit" class="img">
+                            <h3>Our famous Cawl</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="imgRow">
+                    <div>
+                        <a href="#">
+                            <img id="foodImage" src="img/food/Food-4-1-scaled.jpg" alt="food" class="img">
+                            <h3></h3>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img id="dinnerRoomImage" src="img/rooms/Robertson-dining-room.jpg" alt="dinnerRoom" class="img">
+                            <h3></h3>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>        
     </main>
     <footer class="footerIndex">
         <button class="backToTop" id="backToTop" onclick="scrollToTop()">↑ Back to Top</button>
