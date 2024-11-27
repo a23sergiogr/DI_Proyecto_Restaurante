@@ -3,17 +3,17 @@ function goToBreakfast() {
 }
 
 function goToRooms() {
-    window.scrollTo({ top: 2000, behavior: 'smooth' });
+    window.scrollTo({ top: 3060, behavior: 'smooth' });
 }
 
 function goToLunch() {
-    window.scrollTo({ top: 3000, behavior: 'smooth' });
+    window.scrollTo({ top: 4660, behavior: 'smooth' });
 }
 
 function goToAfternoon() {
-    window.scrollTo({ top: 4000, behavior: 'smooth' });
+    window.scrollTo({ top: 6470, behavior: 'smooth' });
 }
 
 function goToDinner() {
-    window.scrollTo({ top: 5000, behavior: 'smooth' });
+    window.scrollTo({ top: 8230, behavior: 'smooth' });
 }

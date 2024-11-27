@@ -72,6 +72,10 @@ html {
     transition: top 0.3s ease, position 0.3s ease;
 }
 
+#parteLogo{
+    padding: 40px;
+}
+
 #parteLogo a {
     text-decoration: none;
     display: flex;
@@ -149,6 +153,7 @@ html {
 }
 
 .video-background {
+    z-index: -2;
     position: relative;
     width: 100%;
     height: 100vh;
@@ -205,55 +210,174 @@ video {
 /****************************************************************************************************************/
 
 
+
+
 .mainIndex{
-    width: calc(100% - 40px);
-    padding: 40px;
+    width: 100%;
 }
+
+
+/******************************************/
+/*****************Imagenes*****************/
+/******************************************/
 
 .ImagesContainer{
-    margin-right: 200px;
-}
-
-.breakfast{
-    padding: 20px;
+    width: calc(100% - 300px);
 }
 
 .imgSectionIndex{
-    padding-top: 200px;
+    padding-top: 0px;
 }
 
 .imgRow{
-    display: grid;
-    justify-items: start;
-    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flag{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transform: translateY(150px);
+    background-color: transparent;
+}
+
+
+/*Breakfast*/
+.breakfast{
+    padding-top: 100px;
+    padding: 10px;
 }
 
 #honeyImage{
-    width: calc(481px * 1.2);
-    height: calc(671px * 1.2);
-}
-
-#pancakesImage{
-    width: calc(481px * 1.2);
-    height: calc(671px * 1.2);
+    width: calc(481px * 1);
+    height: calc(671px * 1);
 }
 
 #baraImage{
-    width: calc(780px * 1.2);
-    height: calc(585px * 1.2);
+    width: calc(439px * 1);
+    height: calc(585px * 1);
+    transform: translateY(0);
+    transition: transform 1s ease;
+}
 
+#pancakesImage{
+    width: calc(481px * 1);
+    height: calc(671px * 1);
+}
+
+#baraImage2{
+    width: 100%;
+    height: 100%;
     margin-top: 20px;    
 }
 
+
+/*Rooms*/
+.rooms{
+    padding: 10px;
+}
+
 #masterBedroomImage{
-    width: 1200px;
-    height: 799px;
+    width: calc(1200px * 0.66);
+    height: calc(799px * 0.66);
 }
 
 #cheapBedroomImage{
-    width: 1900px;
-    height: 1169px;
+    width: calc(1900px * 0.36);
+    height: calc(1169px * 0.36);
+    transition: transform 1s ease;
 }
+
+#barnImage{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;    
+}
+
+
+/*Lunch*/
+.lunch{
+    padding: 10px;
+}
+
+#sausagesImage{
+    width: calc(1500px * 0.6);
+    height: calc(845px * 0.6);
+    transition: transform 1.2s ease;
+}
+
+#roastLegImage{
+    width: calc(439px * 1.2);
+    height: calc(585px * 1.2);
+}
+
+#cawlImage{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;    
+}
+
+
+/*Afternoon*/
+.afternoon{
+    padding: 10px;
+}
+
+#biscuitsImage{
+    width: calc(400px * 1.2);
+    height: calc(267px * 1.2);
+    transition: transform 2s ease;
+}
+
+#teaImage{
+    width: calc(1000px * 1);
+    height: calc(749px * 1);
+}
+
+#wineCellarImage{
+    width: calc(600px * 1.2);
+    height: calc(800px * 1.2);
+    margin-top: 20px;    
+}
+
+#wineImage{
+    width: calc(600px * 1.2);
+    height: calc(800px * 1.2);
+    margin-top: 20px;    
+}
+
+
+/*Dinner*/
+.dinner{
+    padding: 10px;
+}
+
+#foodImage{
+    width: 100%;
+    height: 100%;
+}
+
+#rarebitImage{
+    width: calc(1500px * 0.5);
+    height: calc(845px * 0.5);
+    margin-top: 20px;    
+}
+
+#dinnerRoomImage{
+    width: calc(1000px * 0.7);
+    height: calc(667px * 0.7);
+    margin-top: 20px;    
+}
+
+#mexillonsImage{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;    
+}
+
 
 .img {  
     height: 600px;
@@ -277,7 +401,7 @@ video {
 
 .rightbox {
     position: fixed;
-    top: 80px;
+    top: 160px;
     right: 150px;
     height: 100%;
     visibility: hidden;
@@ -364,11 +488,6 @@ video {
     outline: none;
     box-shadow: 0 0 5px var(--highlightPrimaryColor);
 }
-
-
-/******************************************/
-/******************************************/
-/******************************************/
 
 
 /****************************************************************************************************************/

@@ -5,16 +5,16 @@ window.addEventListener('scroll', function () {
     
     var windowHeight = window.innerHeight;
 
-    if (window.scrollY > 10000) {
-        backToTopButton.classList.add('show'); // Muestra el botón
+    if (window.scrollY > 10500) {
+        backToTopButton.classList.add('show');
     } else {
-        backToTopButton.classList.remove('show'); // Oculta el botón
+        backToTopButton.classList.remove('show'); 
     }
 
     if (window.scrollY > 800 && this.window.scrollY < 10000) {
-        timeline.classList.add('show'); // Muestra la Timeline
+        timeline.classList.add('show'); 
     } else {
-        timeline.classList.remove('show'); // Muestra la Timeline
+        timeline.classList.remove('show'); 
     }
 });
 
