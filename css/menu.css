@@ -1,0 +1,92 @@
+@font-face {
+    font-family: wales-sans;
+    src: url("../fonts/wales-sans-headline-regular-web.woff2.ttf");
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+:root {
+    --primaryColor: #F6E05E;
+    --highlightPrimaryColor: #ffbb00;
+    --primaryShadowColor: rgba(246, 224, 94, 0.4);
+    --transparentBackgroundPrimaryColor: rgba(255, 187, 0, 0.1);
+
+    --backgroundColor: #151935;
+    --textColor: #F6E05E;
+    --overlayColor: rgba(0, 0, 0, 0.5);
+
+    --buttonBackgroundColor: #4CAF50; 
+    --buttonHoverColor: #45a049; 
+    --buttonShadowColor: rgba(76, 175, 80, 0.5);
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: var(--textColor);
+
+    width: 100%;
+    height: 100%;
+    
+    background: var(--backgroundColor) url('https://www.transparenttextures.com/patterns/cubes.png');
+    background-size: auto;
+    box-shadow: inset 0 1200px 1000px rgba(0, 0, 0, 0.5);
+
+    display: grid;
+    align-items: center;
+}
+
+
+.menu-page {
+    font-family: 'wales-sans', Arial, sans-serif;
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.menu-section {
+    background: var(--transparentBackgroundPrimaryColor);
+    border: 1px solid var(--primaryColor);
+    box-shadow: 0 4px 10px var(--primaryShadowColor);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem;
+    width: 90%;
+    max-width: 800px;
+}
+
+.menu-section h2 {
+    text-align: center;
+    color: var(--highlightPrimaryColor);
+    margin-bottom: 1rem;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.menu-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 5px var(--buttonShadowColor);
+}
+
+.menu-item p {
+    margin: 0;
+    font-size: 1.2rem;
+}
