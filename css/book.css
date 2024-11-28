@@ -1,3 +1,9 @@
+@font-face {
+    font-family: wales-sans;
+    src: url("../fonts/wales-sans-headline-regular-web.woff2.ttf");
+}
+
+
 *,
 *:before,
 *:after {
@@ -23,7 +29,7 @@ body,
 html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: wales-sans;
     color: var(--textColor);
 
     width: 100%;
@@ -37,7 +43,7 @@ html {
     align-items: center;
 }
 
-.restaurant-form-container {
+.restaurantFormContainer {
     width: 90%;
     max-width: 600px;
     margin: 50px auto;
@@ -47,28 +53,29 @@ html {
     border-radius: 10px;
 }
 
-.form-title {
+.formTitle {
     text-align: center;
     color: var(--highlightPrimaryColor);
+    text-shadow: 0 4px 6px var(--primaryShadowColor); 
     margin-bottom: 20px;
     font-size: 24px;
 }
 
-.restaurant-form .form-group {
+.restaurantForm .formGroup {
     margin-bottom: 15px;
 }
 
-.restaurant-form label {
+.restaurantForm label {
     display: block;
     margin-bottom: 5px;
     font-size: 14px;
     color: var(--textColor);
 }
 
-.restaurant-form input, 
-.restaurant-form select, 
-.restaurant-form textarea {
-    width: 100%;
+.choices,
+.restaurantForm input, 
+.restaurantForm textarea {
+    width: calc(100% - 20px);
     padding: 10px;
     margin: 5px 0 10px;
     border: 1px solid var(--primaryColor);
@@ -78,40 +85,93 @@ html {
     font-size: 14px;
 }
 
-.restaurant-form input:focus,
-.restaurant-form select:focus,
-.restaurant-form textarea:focus {
+.restaurantForm input:focus,
+.restaurantForm textarea:focus {
     outline: none;
     border-color: var(--highlightPrimaryColor);
     box-shadow: 0 0 5px var(--primaryShadowColor);
 }
 
-.restaurant-form textarea {
+.restaurantForm textarea {
     resize: none;
     height: 100px;
 }
 
-.restaurant-form .form-actions {
+.restaurantForm .formActions {
     text-align: center;
 }
 
-.submit-button {
+.submitButton {
     background-color: var(--buttonBackgroundColor);
-    color: white;
+    color: var(--highlightPrimaryColor);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    text-shadow: 0 4px 6px var(--primaryShadowColor); 
     box-shadow: 0px 4px 6px var(--buttonShadowColor);
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.submit-button:hover {
+.submitButton:hover {
     background-color: var(--buttonHoverColor);
     transform: translateY(-2px);
 }
 
-.submit-button:active {
+.submitButton:active {
     transform: translateY(0);
+}
+
+
+.choices{
+
+}
+
+.choices__inner {
+    background-color: rgba(255, 187, 0, 0.1); 
+    border: 2px solid #F6E05E; 
+    border-radius: 8px;
+    padding: 10px;
+    color: #F6E05E;
+    transition: border-color 0.3s ease;
+}
+
+.choices__inner:hover {
+    border-color: #FFBB00; 
+}
+
+.choices__placeholder {
+    color: rgba(246, 224, 94, 0.7);
+}
+
+.choices__list--dropdown {
+    display: none;
+    background-color: #151935; 
+    border: 1px solid #F6E05E; 
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+    margin-top: 5px;
+}
+
+.choices__item--choice {
+    padding: 10px;
+    color: #F6E05E;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.choices__item--choice:hover {
+    background-color: var(--buttonBackgroundColor); 
+    color: #FFFFFF; 
+}
+
+.choices__item--selectable {
+    background-color: rgba(76, 175, 80, 0.3); 
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.choices.is-open .choices__list--dropdown {
+    display: block;
 }
