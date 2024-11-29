@@ -20,9 +20,9 @@
     --textColor: #F6E05E;
     --overlayColor: rgba(0, 0, 0, 0.5);
 
-    --buttonBackgroundColor: #4CAF50; 
-    --buttonHoverColor: #45a049; 
-    --buttonShadowColor: rgba(76, 175, 80, 0.5);
+    --buttonBackgroundColor: #A171E0; 
+    --buttonHoverColor: #8C55C4;
+    --buttonShadowColor: rgba(161, 113, 224, 0.5);
 }
 
 body,
@@ -42,6 +42,161 @@ html {
     display: grid;
     align-items: center;
 }
+
+
+
+/****************************************************************************************************************/
+/*****************************************************HEADER*****************************************************/
+/****************************************************************************************************************/
+
+
+.headerBook {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    width: calc(100% - 120px);
+    padding: 40px;
+    padding-right: 80px;
+    
+    position: fixed; 
+    top: 0; 
+
+    transition: top 0.3s ease, position 0.3s ease;
+}
+
+#parteLogo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+#nombrePagina {
+    color: var(--primaryColor);
+    font-size: 24px;
+    text-decoration: none;
+    text-shadow: 0 4px 6px var(--primaryShadowColor); 
+
+    font-family: wales-sans;
+}
+
+#nombrePagina:hover {
+    color: var(--highlightPrimaryColor);
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+
+#enlaces {
+    justify-self: flex-end;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#enlaces li {
+    margin-right: 15px;
+    position: relative;
+}
+
+#enlaces li a {
+    color: var(--primaryColor);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+#enlaces li a:hover {
+    color: var(--highlightPrimaryColor);
+}
+
+.bar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0;
+}
+
+.bar-container .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primaryColor);
+    margin: 3px 0;
+    border-radius: 3px;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+.bar-container.active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(12px);
+}
+
+.bar-container.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.bar-container.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-12px);
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 110px;
+    align-items: center;
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--primaryColor);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.dropdown li {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.dropdown li a {
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--primaryColor);
+    transition: color 0.3s ease;
+}
+
+.dropdown li a:hover {
+    color: var(--highlightPrimaryColor);
+}
+
+.menu-option.hidden {
+    display: none;
+}
+
+.book{
+    color: var(--highlightPrimaryColor) !important;
+    font-weight: bold !important;
+}
+
+.book:hover{
+    border-bottom: 2px solid var(--highlightPrimaryColor) !important;
+}
+
+
+/****************************************************************************************************************/
+/******************************************************MAIN******************************************************/
+/****************************************************************************************************************/
+
+
 
 .restaurantFormContainer {
     width: 90%;
@@ -92,6 +247,12 @@ html {
     box-shadow: 0 0 5px var(--primaryShadowColor);
 }
 
+.restaurantForm textarea::placeholder,
+.restaurantForm input::placeholder{
+    color: var(--buttonBackgroundColor); 
+    opacity: .8; 
+}
+
 .restaurantForm textarea {
     resize: none;
     height: 100px;
@@ -123,32 +284,21 @@ html {
     transform: translateY(0);
 }
 
-
-.choices{
-
-}
-
 .choices__inner {
-    background-color: rgba(255, 187, 0, 0.1); 
-    border: 2px solid #F6E05E; 
+    background-color: rgba(255, 230, 0, 0.1); 
     border-radius: 8px;
-    padding: 10px;
-    color: #F6E05E;
+    color: var(--primaryColor);
     transition: border-color 0.3s ease;
 }
 
 .choices__inner:hover {
-    border-color: #FFBB00; 
-}
-
-.choices__placeholder {
-    color: rgba(246, 224, 94, 0.7);
+    border-color: var(--highlightPrimaryColor); 
 }
 
 .choices__list--dropdown {
     display: none;
-    background-color: #151935; 
-    border: 1px solid #F6E05E; 
+    background-color: var(--backgroundColor); 
+    border: 1px solid var(--primaryColor); 
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
     margin-top: 5px;
@@ -156,22 +306,93 @@ html {
 
 .choices__item--choice {
     padding: 10px;
-    color: #F6E05E;
+    color: var(--primaryColor);
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .choices__item--choice:hover {
     background-color: var(--buttonBackgroundColor); 
-    color: #FFFFFF; 
+    color: var(--highlightPrimaryColor); 
 }
 
 .choices__item--selectable {
-    background-color: rgba(76, 175, 80, 0.3); 
+    background-color: var(--buttonShadowColor); 
     border-radius: 4px;
     padding: 5px;
 }
 
 .choices.is-open .choices__list--dropdown {
     display: block;
+}
+
+input[type="date"], input[type="time"] {
+    color: var(--buttonHoverColor);
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background-color: var(--buttonHoverColor); 
+    border-radius: 50%; 
+    padding: 2px; 
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: var(--buttonHoverColor); 
+    border-radius: 50%; 
+    padding: 2px;
+}
+
+/****************************************************************************************************************/
+/*****************************************************FOOTER*****************************************************/
+/****************************************************************************************************************/
+
+.footerBook{
+    padding: 40px;
+    padding-bottom: 20px;
+
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    align-items: center;
+    justify-items: center;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bottonInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: end;
+    padding: 40px;
+}
+
+.location {
+    justify-self: left;
+}
+
+.location p{
+    font-family: wales-sans;
+}
+
+.contactInfo {
+    justify-self: center;
+}
+
+.socialImg {
+    justify-self: right;
+    align-self: flex-end;
+}
+
+.socialImg a {
+    text-decoration: none;
+}
+
+.svg {
+    fill: var(--primaryColor);
+    stroke: var(--primaryColor);
+    box-shadow: 0 4px 6px var(--primaryShadowColor); 
 }

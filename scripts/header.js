@@ -6,13 +6,13 @@ window.addEventListener('scroll', function () {
     }
     else {
         // Si se está desplazando hacia abajo
-        this.document.getElementById("parteSuperior").style.top = "-200px"
+        this.document.getElementById("parteSuperior").style.top = "-300px"
 
         //Si llega al footer
         if (window.scrollY > 10500) {
             this.document.getElementById("parteSuperior").style.top = "0"
         } else {
-            this.document.getElementById("parteSuperior").style.top = "-200px"
+            this.document.getElementById("parteSuperior").style.top = "-300px"
         }
     
     }

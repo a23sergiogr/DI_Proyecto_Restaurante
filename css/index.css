@@ -19,9 +19,9 @@
     --textColor: #F6E05E;
     --overlayColor: rgba(0, 0, 0, 0.5);
 
-    --buttonBackgroundColor: #4CAF50; 
-    --buttonHoverColor: #45a049; 
-    --buttonShadowColor: rgba(76, 175, 80, 0.5);
+    --buttonBackgroundColor: #A171E0; 
+    --buttonHoverColor: #8C55C4;
+    --buttonShadowColor: rgba(161, 113, 224, 0.5);
 }
 
 body,
@@ -101,31 +101,30 @@ html {
     margin-right: 10px;
 }
 
+
 #enlaces {
     justify-self: flex-end;
     list-style: none;
-
     display: flex;
     align-items: center;
     margin: 0;
+    padding: 0;
 }
 
 #enlaces li {
     margin-right: 15px;
+    position: relative;
 }
 
 #enlaces li a {
     color: var(--primaryColor);
     text-decoration: none;
     font-size: 18px;
+    transition: color 0.3s ease;
 }
 
 #enlaces li a:hover {
     color: var(--highlightPrimaryColor);
-}
-
-#enlaces li:first-child a {
-    font-weight: bold;
 }
 
 .bar-container {
@@ -133,24 +132,68 @@ html {
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
+    margin: 0;
 }
 
-.bar-container:hover {
-    .bar {
-        background-color: var(--highlightPrimaryColor);
-    }
-}
-
-.bar {
-    width: 20px;
-    height: 2px;
+.bar-container .bar {
+    width: 25px;
+    height: 3px;
     background-color: var(--primaryColor);
     margin: 3px 0;
+    border-radius: 3px;
+    transition: transform 0.5s ease, background-color 0.5s ease;
 }
 
-.bar.short {
-    width: 12px;
+.bar-container.active .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(12px);
 }
+
+.bar-container.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.bar-container.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-12px);
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 110px;
+    align-items: center;
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--primaryColor);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+.dropdown li {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.dropdown li a {
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--primaryColor);
+    transition: color 0.3s ease;
+}
+
+.dropdown li a:hover {
+    color: var(--highlightPrimaryColor);
+}
+
+.menu-option.hidden {
+    display: none;
+}
+
+
 
 .video-background {
     z-index: -2;

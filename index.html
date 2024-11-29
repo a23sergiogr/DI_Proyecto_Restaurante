@@ -9,6 +9,7 @@
     <script src="/scripts/backToTop.js"></script>
     <script src="/scripts/timeline.js"></script>
     <script src="/scripts/imgTranslate.js"></script>
+    <script src="/scripts/barsMenu.js"></script>
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -16,7 +17,7 @@
     <header class="headerIndex">
         <div class="parteSuperior" id="parteSuperior">
             <div id="parteLogo">
-                <a href="#">
+                <a href="/index.html">
                     <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" id="logo">
                         <defs>
                             <g id="star" transform="rotate(-15, 100, 100)">
@@ -39,12 +40,18 @@
                 </a>
             </div>
             <ul id="enlaces">
-                <li><a href="#">Book</a></li>
-                <li><a href="#">Food</a></li>
-                <div class="bar-container">
+                <li><a href="/book.html" class="menu-option">Book</a></li>
+                <li><a href="/menu.html" class="menu-option">Menu</a></li>
+                <li class="bar-container">
                     <div class="bar"></div>
-                    <div class="bar short"></div>
-                </div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <ul class="dropdown hidden">
+                        <li><a href="/book.html">Book</a></li>
+                        <li><a href="/menu.html">Menu</a></li>
+                        <li><a href="/aboutUs.html">About Us</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <div class="video-background">
@@ -86,24 +93,24 @@
             <section class="breakfast imgSectionIndex">
                 <div class="imgRow">
                     <div class="imgDiv">
-                        <a href="#">
+                        <a href="/book.html">
                             <img id="honeyImage" src="img/food/FMDD2333.jpg" alt="honey" class="img">
                         </a>
                     </div>
                     <div class="imgDiv">
-                        <a href="#">
+                        <a href="/book.html">
                             <img id="baraImage" src="img/food/bara_brith.jpg.jpg" alt="honey" class="img">
                         </a>
                         <div class="flag" id="baraImageFlag"> </div>
                     </div>
                     <div class="imgDiv">
-                        <a href="#">
+                        <a href="/book.html">
                             <img id="pancakesImage" src="img/food/raspberry_and_lemon_pancakes.jpg" alt="pancakes" class="img">
                         </a>
                     </div>
                 </div>
                 <div class="imgDiv">
-                    <a href="#">
+                    <a href="/book.html">
                         <img id="baraImage2" src="img/food/02 Bara brith in tin.jpg.jpg" alt="Bara" class="img">
                     </a>
                 </div>
@@ -112,19 +119,19 @@
             <section class="rooms imgSectionIndex">
                 <div class="imgRow">
                     <div class="imgDiv">
-                        <a href="#">
+                        <a href="/book.html">
                             <img id="cheapBedroomImage" src="img/rooms/conwy-fusion-slide-min.jpg" alt="cheapBeadroom" class="img">
                         </a>
                         <div class="flag" id="cheapBedroomImageFlag"> </div>
                     </div>
                     <div class="imgDiv">
-                        <a href="#">
+                        <a href="/book.html">
                             <img id="masterBedroomImage" src="img/rooms/Churchill-1-gallery.jpg" alt="masterBeadroom" class="img">
                         </a>
                     </div>
                 </div>
                 <div class="imgDiv">
-                    <a href="#">
+                    <a href="/book.html">
                         <img id="barnImage" src="img/rooms/Harpers-Barn-08-mod-min.jpg" alt="barn" class="img">
                     </a>
                 </div>
@@ -133,19 +140,19 @@
             <section class="lunch imgSectionIndex">
                 <div class="imgRow">
                     <div class="imgDiv">
-                        <a href="#">
+                        <a href="/book.html">
                             <img id="sausagesImage" src="img/food/Glamorgan Sausages Frying.jpg.jpg" alt="Sausages" class="img">
                         </a>
                         <div class="flag" id="sausagesImageFlag"> </div>
                     </div>
                     <div class="imgDiv">
-                        <a href="#">
+                        <a href="/book.html">
                             <img id="roastLegImage" src="img/food/Honey glazed roast leg of Welsh lamb with ginger and mustard.jpg" alt="roastLeg" class="img">
                         </a>
                     </div>
                 </div>
                 <div class="imgDiv">
-                    <a href="#">
+                    <a href="/book.html">
                         <img id="cawlImage" src="img/food/deconstruct_ngtf-cawl-06_hr.avif" alt="cawl" class="img">
                     </a>
                 </div>
@@ -154,25 +161,25 @@
             <section class="afternoon imgSectionIndex">
                 <div class="imgRow">
                     <div class="imgDiv">
-                        <a href="#">
+                        <a href="/book.html">
                             <img id="biscuitsImage" src="img/afternoon/afternoon-tea-1.jpg" alt="biscuits" class="img">
                         </a>
                         <div class="flag" id="biscuitsImageFlag"> </div>
                     </div>
                     <div class="imgDiv">
-                        <a href="#">
+                        <a href="/book.html">
                             <img id="teaImage" src="img/afternoon/Pale-Hall-aft-tea-001.jpg" alt="tea" class="img">
                         </a>
                     </div>
                 </div>
                 <div class="imgRow">
                     <div class="imgDiv">
-                        <a href="#">
+                        <a href="/book.html">
                             <img id="wineCellarImage" src="img/afternoon/Pale-Hall-wine-cellar-600x792.jpg" alt="wineCellar" class="img">
                         </a>
                     </div>
                     <div class="imgDiv">
-                        <a href="#">
+                        <a href="/book.html">
                             <img id="wineImage" src="img/afternoon/shutterstock_2487256111-1-scaled-e1722261886342-600x808.jpg" alt="wine" class="img">
                         </a>
                     </div>
@@ -181,25 +188,25 @@
             
             <section class="dinner imgSectionIndex">
                 <div class="imgDiv">
-                    <a href="#">
+                    <a href="/book.html">
                         <img id="foodImage" src="img/food/Food-4-1-scaled.jpg" alt="food" class="img">
                     </a>
                 </div>
                 <div class="imgRow">
                     <div class="imgDiv">
-                        <a href="#">
+                        <a href="/book.html">
                             <img id="dinnerRoomImage" src="img/rooms/Robertson-dining-room.jpg" alt="dinnerRoom" class="img">
                         </a>
                     </div>
                     <div class="imgDiv">
-                        <a href="#">
+                        <a href="/book.html">
                             <img id="rarebitImage" src="img/food/Welsh rarebit with laverbread & ale.jpg.jpg" alt="rarebit" class="img">
                         </a>
                         <div class="flag" id="rarebitImageFlag"> </div>
                     </div>
                 </div>
                 <div class="imgDiv">
-                    <a href="#">
+                    <a href="/book.html">
                         <img id="mexillonsImage" src="img/food/NVW-C93-1920-0071.jpg" alt="mexillons" class="img">
                     </a>
                 </div>
