@@ -28,7 +28,7 @@ body,
 html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: wales-sans;
     color: var(--textColor);
 
     width: 100%;
@@ -113,20 +113,23 @@ html {
     color: var(--highlightPrimaryColor);
 }
 
+
+/* Dropdown Menu */
+
 .bar-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
     cursor: pointer;
-    margin: 0;
+    position: relative;
 }
 
-.bar-container .bar {
-    width: 25px;
+.bar {
     height: 3px;
-    background-color: var(--primaryColor);
-    margin: 3px 0;
-    border-radius: 3px;
+    background-color: var(--highlightPrimaryColor);
+    border-radius: 5px;
     transition: transform 0.5s ease, background-color 0.5s ease;
 }
 
@@ -143,45 +146,80 @@ html {
 }
 
 .dropdown {
-    display: none;
     position: absolute;
-    top: 40px;
+    top: 30px;
     right: 0;
-    width: 110px;
-    align-items: center;
-    background-color: var(--backgroundColor);
-    border: 1px solid var(--primaryColor);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--buttonShadowColor);
+    box-shadow: 0 4px 8px var(--buttonShadowColor);
+    border: 2px var(--primaryColor) solid;
+    border-radius: 8px;
     list-style: none;
-    padding: 10px;
-    z-index: 10;
-    border-radius: 5px;
-    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none;
 }
 
 .dropdown li {
-    margin: 0;
-    padding: 5px 10px;
+    margin-right: 0 !important;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--highlightPrimaryColor);
 }
 
-.dropdown li a {
-    font-size: 16px;
+.dropdown li:last-child {
+    border-bottom: none;
+}
+
+.dropdown a {
     text-decoration: none;
-    color: var(--primaryColor);
+    color: var(--textColor);
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
-.dropdown li a:hover {
-    color: var(--highlightPrimaryColor);
+.dropdown a:hover {
+    color: var(--buttonBackgroundColor);
 }
 
-.menu-option.hidden {
-    display: none;
+.flagsLanguage {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
+
+.flagsLanguage img {
+    height: 2rem;
+    width: auto;
+    cursor: pointer;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.flagsLanguage img:hover {
+    transform: scale(1.1);
+}
+
+.flagLenguage.inactive {
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.flagLenguage.active {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
 
 .menu{
     color: var(--highlightPrimaryColor) !important;
     font-weight: bold !important;
+    transition: all 0.3s ease;
 }
 
 .menu:hover{
@@ -192,87 +230,101 @@ html {
 /******************************************************MAIN******************************************************/
 /****************************************************************************************************************/
 
-
-.mainMenu{
+.mainMenu {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 3rem;
     padding: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid var(--primaryColor);
+    border-radius: 10px;
+    background: var(--transparentBackgroundPrimaryColor);
 }
 
 .menu-section {
-    background: var(--transparentBackgroundPrimaryColor);
-    border: 1px solid var(--primaryColor);
-    box-shadow: 0 4px 10px var(--primaryShadowColor);
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin: 1rem;
-    width: 90%;
-    max-width: 800px;
-    transition: transform 0.3s ease;
+    width: 75%;
+    border-bottom: 2px solid var(--primaryColor);
+    padding: 2rem;
 }
 
-.menu-section:hover {
-    transform: scale(1.02); 
+.menu-section:last-child {
+    border-bottom: none;
 }
 
 .menu-section h2 {
     text-align: center;
     color: var(--highlightPrimaryColor);
-    margin-bottom: 1rem;
-    font-family: 'Georgia', serif;
-    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-family: wales-sans;
+    font-size: 2.5rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 0 4px 6px var(--primaryShadowColor); 
+    text-shadow: 0 6px 8px var(--primaryShadowColor);
 }
 
 .menu-item {
     display: flex;
     align-items: center;
-    justify-content: space-between; 
-    gap: 1rem;
-    margin-bottom: 1rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--highlightPrimaryColor);
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    width: 100%; 
     transition: background 0.3s ease;
-}
-
-.menu-item:hover {
-    background-color: var(--transparentBackgroundPrimaryColor); 
+    position: relative;
 }
 
 .menu-item img {
-    width: 80px;
-    height: 80px;
+    width: 250px; 
+    height: 250px; 
     border-radius: 8px;
     object-fit: cover;
-    box-shadow: 0 2px 5px var(--buttonShadowColor);
+    box-shadow: 0 4px 10px var(--buttonShadowColor);
     transition: transform 0.3s ease;
 }
 
 .menu-item img:hover {
-    transform: scale(1.1); 
+    transform: scale(1.2);
+}
+
+.menu-item .content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    text-align: right; 
+    width: 100%; 
 }
 
 .menu-item p {
     margin: 0;
-    font-size: 1.2rem;
-    font-family: 'Arial', sans-serif;
+    font-size: 1.3rem;
+    font-family: wales-sans;
     color: var(--textColor);
 }
 
-.menu-item .price {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--highlightPrimaryColor);
-    text-align: right; 
+.menu-item .description {
+    font-size: 1.1rem;
+    color: var(--textColor);
+    margin-top: 0.5rem;
 }
 
-.menu-item .price:hover {
-    border-bottom: 1px solid var(--highlightPrimaryColor);
+.menu-item .price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--highlightPrimaryColor);
+    text-align: right;
+}
+
+
+.menu-item .allergens {
+    font-size: 1rem;
+    color: var(--highlightPrimaryColor);
+    margin-top: 0.5rem;
 }
 
 

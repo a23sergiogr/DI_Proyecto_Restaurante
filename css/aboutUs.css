@@ -1,3 +1,8 @@
+@font-face {
+    font-family: wales-sans;
+    src: url("../fonts/wales-sans-headline-regular-web.woff2.ttf");
+}
+
 *,
 *:before,
 *:after {
@@ -23,7 +28,7 @@ body,
 html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: wales-sans;
     color: var(--textColor);
 
     width: 100%;
@@ -108,20 +113,23 @@ html {
     color: var(--highlightPrimaryColor);
 }
 
+
+/* Dropdown Menu */
+
 .bar-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
     cursor: pointer;
-    margin: 0;
+    position: relative;
 }
 
-.bar-container .bar {
-    width: 25px;
+.bar {
     height: 3px;
-    background-color: var(--primaryColor);
-    margin: 3px 0;
-    border-radius: 3px;
+    background-color: var(--highlightPrimaryColor);
+    border-radius: 5px;
     transition: transform 0.5s ease, background-color 0.5s ease;
 }
 
@@ -138,40 +146,73 @@ html {
 }
 
 .dropdown {
-    display: none;
     position: absolute;
-    top: 40px;
+    top: 30px;
     right: 0;
-    width: 110px;
-    align-items: center;
-    background-color: var(--backgroundColor);
-    border: 1px solid var(--primaryColor);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--buttonShadowColor);
+    box-shadow: 0 4px 8px var(--buttonShadowColor);
+    border: 2px var(--primaryColor) solid;
+    border-radius: 8px;
     list-style: none;
-    padding: 10px;
-    z-index: 10;
-    border-radius: 5px;
-    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none;
 }
 
 .dropdown li {
-    margin: 0;
-    padding: 5px 10px;
+    margin-right: 0 !important;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--highlightPrimaryColor);
 }
 
-.dropdown li a {
-    font-size: 16px;
+.dropdown li:last-child {
+    border-bottom: none;
+}
+
+.dropdown a {
     text-decoration: none;
-    color: var(--primaryColor);
+    color: var(--textColor);
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
-.dropdown li a:hover {
-    color: var(--highlightPrimaryColor);
+.dropdown a:hover {
+    color: var(--buttonBackgroundColor);
 }
 
-.menu-option.hidden {
-    display: none;
+.flagsLanguage {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.flagsLanguage img {
+    height: 2rem;
+    width: auto;
+    cursor: pointer;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.flagsLanguage img:hover {
+    transform: scale(1.1);
+}
+
+.flagLenguage.inactive {
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.flagLenguage.active {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .aboutUs{
@@ -183,17 +224,32 @@ html {
     border-bottom: 2px solid var(--highlightPrimaryColor) !important;
 }
 
+
 /****************************************************************************************************************/
 /******************************************************MAIN******************************************************/
 /****************************************************************************************************************/
 
+.mainAboutUs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+
+
+.mainAboutUs h2 {
+    color: var(--highlightPrimaryColor);
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
 
 
 .about-section {
     max-width: 1200px;
     margin: 4rem auto;
-    padding: 3rem;
-    background-color: #ffffff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     text-align: center;
@@ -224,13 +280,12 @@ html {
     padding: 1.5rem;
 }
 
-.about-text h2 {
-    color: var(--highlightPrimaryColor);
-    font-size: 3rem;
+.about-text h3 {
+    color: var(--buttonHoverColor);
+    font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin: 1rem;
     letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 .about-images {
@@ -239,13 +294,10 @@ html {
     gap: 1.5rem;
     justify-content: center;
     align-items: center;
-    max-width: 650px;
-    padding: 1.5rem;
 }
 
 .about-img {
     width: 100%;
-    max-width: 500px;
     height: auto;
     border-radius: 10px;
     object-fit: cover;
@@ -261,7 +313,6 @@ html {
 #aboutUs {
     background: linear-gradient(135deg, var(--transparentBackgroundPrimaryColor), var(--transparentBackgroundPrimaryColor));
 }
-
 
 
 
